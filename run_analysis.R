@@ -21,7 +21,7 @@
                 dataTrain <- tbl_df(read.table(file.path(UCIHARfilespath, "train", "X_train.txt" )))
                 dataTest  <- tbl_df(read.table(file.path(UCIHARfilespath, "test" , "X_test.txt" )))
 
-#PART 1: Merges the training and the test sets to create one data set
+#PART 1: Merge the training and the test sets to create one data set
 
         library(data.table)
         #merge the training and the test sets using row binding and rename the variables "subject" and "activityNum"
@@ -47,7 +47,7 @@
                 alldataSubjAct<- cbind(dataSubjConsolidated, dataActConsolidated)
                 alldataTable <- cbind(alldataSubjAct, dataTable)
 
-#PART2: Extracts only the measurements on the mean and standard deviation for each measurement
+#PART2: Extract only the measurements on the mean and standard deviation for each measurement
 
         # Read "features.txt" and extract the mean and standard deviations
                 dataFeaturesMeanStd <- grep("mean\\(\\)|std\\(\\)",namebyFeatures$featureName,value=TRUE) #var name
@@ -56,7 +56,7 @@
                 dataFeaturesMeanStd <- union(c("subject","activityNum"), dataFeaturesMeanStd)
                 dataTableMeanStd<- subset(alldataTable,select=dataFeaturesMeanStd)
 
-#PART3: Uses descriptive activity names to name the activities in the data set
+#PART3: Use descriptive activity names to name the activities in the data set
 
         #enter activity names into dataTable
                 dataTableMeanStd <- merge(activityLabelNames, dataTableMeanStd , by="activityNum", all.x=TRUE)
@@ -67,7 +67,7 @@
                 dataAggr<- aggregate(. ~ subject - activityName, data = dataTableMeanStd, mean) 
                 dataTableSorted<- tbl_df(arrange(dataAggr,subject,activityName))
 
-#PART4: Appropriately labels the data set with descriptive variable names
+#PART4: Appropriately label the data set with descriptive variable names
         str(dataTableSorted)
 
         names(dataTableSorted)<-gsub("std()", "SD", names(dataTableSorted))
@@ -81,5 +81,6 @@
 
         str(dataTableSorted)
 
-#PART5: From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+#PART5: From the data set in step 4, create an independent tidy data set with 
+#the average of each variable for each activity and each subject
         write.table(dataTableSorted, "TidyDataset.txt", row.name=FALSE)

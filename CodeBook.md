@@ -36,8 +36,8 @@ LAYING (value 6): subject was laying down during the test
 ### Measurements in TidyDataset.txt
 Descriptive field headers                                
 
-timeBodyAccelerometer.MEAN...X                
-timeBodyAccelerometer.MEAN...Y                
+timeBodyAccelerometer.MEAN...X                                          
+timeBodyAccelerometer.MEAN...Y                                        
 timeBodyAccelerometer.MEAN...Z                
 timeBodyAccelerometer.SD...X                   
 timeBodyAccelerometer.SD...Y                   
@@ -96,8 +96,7 @@ frequencyBodyGyroscope.SD...Y
 frequencyBodyGyroscope.SD...Z                 
 frequencyBodyAccelerometerMagnitude.MEAN..    
 frequencyBodyAccelerometerMagnitude.SD..      
-frequencyBodyAccelerometerJerkMagnitude.MEAN..
-                                      
+frequencyBodyAccelerometerJerkMagnitude.MEAN..                
 frequencyBodyAccelerometerJerkMagnitude.SD..      
 frequencyBodyGyroscopeMagnitude.MEAN..        
 frequencyBodyGyroscopeMagnitude.SD..         

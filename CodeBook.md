@@ -97,6 +97,7 @@ frequencyBodyGyroscope.SD...Z
 frequencyBodyAccelerometerMagnitude.MEAN..    
 frequencyBodyAccelerometerMagnitude.SD..      
 frequencyBodyAccelerometerJerkMagnitude.MEAN..
+                                      
 frequencyBodyAccelerometerJerkMagnitude.SD..      
 frequencyBodyGyroscopeMagnitude.MEAN..        
 frequencyBodyGyroscopeMagnitude.SD..         
